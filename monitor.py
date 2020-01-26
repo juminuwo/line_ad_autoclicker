@@ -24,8 +24,17 @@ if __name__ == '__main__':
         time.sleep(5)
         if check_ad_screen(ad_ready_1, ad_not_ready_1):
             if check_ad_ready(ad_ready_1):
+                # click on ad
                 Mouse.position = (res[0] / 2, res[1] / 2)
                 Mouse.click(mouse.Button.left)
+            else:
+                # refresh page
+                Keyboard.press(keyboard.Key.esc)
+                Keyboard.release(keyboard.Key.esc)
+                time.sleep(5)
+                Mouse.position = (res[0] * 0.6217, res[1] * 0.4592)
+                Mouse.click(mouse.Button.left)
         else:
+            # spam back to get out of ad page
             Keyboard.press(keyboard.Key.esc)
             Keyboard.release(keyboard.Key.esc)
